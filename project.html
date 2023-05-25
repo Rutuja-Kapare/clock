@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+  <title>Clock⏰</title>
+  <script>
+    let a;
+    let date;
+    let time;
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day:'numeric'}
+    setInterval(() => {
+      a = new Date();
+      let date = a.toLocaleDateString( undefined,options);
+      // let day = a.getDay();
+      let time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+      document.getElementById('time').innerHTML = time + "<br>on " + date ;
+
+    }, 1000);
+
+    
+    document.getElementById("btn").onclick=function() {myfunction()};
+
+    function myfunction(){
+      document.getElementById("mydropdown").classList.toggle("show");
+    }
+
+
+
+  </script>
+</head>
+<style>
+  .jumbotron {
+    margin: 285px;
+  }
+
+  #time {
+    font-size: 50px;
+  }
+  /*#footer{
+    background-color: rgb(1, 121, 233);
+    color: white;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align:center ;
+    /* left: 0; 
+  }*/
+  .show{display: block; }
+  
+  
+  
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="jumbotron my-4">
+    <h1 class="display-4" >Current Time Is ⏱ : 
+      <span id="time"></span>
+    </h1>
+    <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+      featured content or information.</p>
+    <hr class="my-4">
+    <p><b>We are here to show the time of diffrent countries</b></p>-->
+    <br>
+    <hr>
+    <!-- <a class="btn btn-primary btn-lg" href="#"  id="click1" role="button" onclick="click()">Browse Times
+    <select id="selection">
+
+      <option>India</option>
+      <option>Africa</option>
+      <option>America</option>
+      <option>USA</option>
+      <option>US</option>
+    </select>
+  </a> -->
+  <div class="dropdown">
+    <button onclick="myfunction()" id="btn">
+      Browse time
+    </button>
+    <div id="mydropdown">
+      <select>
+        <option>HOME</option>
+        <option>HOME</option>
+        <option>HOME</option>
+      </select>
+    </div>
+  </div>
+   
+  </div>
+
+  <img src="wave (17).svg" alt="">
+  <!-- <footer id="footer">
+    <b><p>This page is designed by RK</p></b>
+  </footer> -->
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
